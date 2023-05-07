@@ -1,0 +1,45 @@
+#!/usr/bin/perl -w
+
+$in = shift;
+$name = shift;
+
+sysopen(IN, $in, 0) || die "au : $!";
+$len = sysread(IN, $data, 1024*1024*16);
+close(IN);
+
+$line = 0;
+for($a=0; $a<$len; $a+=32) {
+
+	printf "	defparam $name.INIT_%02X = 256'h", $line++;
+
+	for($b=31; $b>=0; $b--) {
+		$i = $a + $b;
+
+		$c = ord(substr($data, $i, 1));
+		printf "%02x", $c;
+	}
+	print ";\n";
+		
+}
+
+__DATA__
+
+   defparam ram.INIT_00 = 256'h1f1e1d1c1b1a191817161514131211100f0e0d0c0b0a09080706050403020101;
+   defparam ram.INIT_01 = 256'h3f3e3d3c3b3a393837363534333231302f2e2d2c2b2a29282726252423222120;
+   defparam ram.INIT_02 = 256'h5f5e5d5c5b5a595857565554535251504f4e4d4c4b4a49484746454443424140;
+   defparam ram.INIT_03 = 256'h7f7e7d7c7b7a797877767574737271706f6e6d6c6b6a69686766656463626160;
+   defparam ram.INIT_04 = 256'h9f9e9d9c9b9a999897969594939291908f8e8d8c8b8a89888786858483828180;
+   defparam ram.INIT_05 = 256'hbfbebdbcbbbab9b8b7b6b5b4b3b2b1b0afaeadacabaaa9a8a7a6a5a4a3a2a1a0;
+   defparam ram.INIT_06 = 256'hdfdedddcdbdad9d8d7d6d5d4d3d2d1d0cfcecdcccbcac9c8c7c6c5c4c3c2c1c0;
+   defparam ram.INIT_07 = 256'hfffefdfcfbfaf9f8f7f6f5f4f3f2f1f0efeeedecebeae9e8e7e6e5e4e3e2e1e0;
+	
+ 
+	/* Character rom */
+
+
+`ifdef FONTx8x16
+   defparam rom.INIT_00 = 256'h000000007e818199bd8181a5817e000000000000000000000000000000000000;
+   defparam rom.INIT_01 = 256'h00000000081c3e7f7f7f7f3600000000000000007effffe7c3ffffdbff7e0000;
+   defparam rom.INIT_02 = 256'h000000003c1818e7e7e73c3c180000000000000000081c3e7f3e1c0800000000;
+   defparam rom.INIT_03 = 256'h000000000000183c3c18000000000000000000003c18187effff7e3c18000000;
+   defparam rom.INIT_04 = 256'h00000000003c664242663c0000000000ffffffffffffe7c3c3e7ffffffffffff;

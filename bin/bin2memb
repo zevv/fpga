@@ -1,0 +1,21 @@
+#!/usr/bin/perl -w
+
+$in = shift;
+sysopen(IN, $in, 0) || die "au : $!";
+$len = sysread(IN, $data, 1024*1024*16);
+close(IN);
+
+for($i=0; $i<$len; $i++) {
+	
+	$c = ord(substr($data, $i, 1));
+	
+	for($j=0; $j<8; $j++) {
+		if($c & (128>>$j)) {
+			print "1";
+		} else {
+			print "0";
+		}
+	}
+	print "\n";
+}
+

@@ -1,0 +1,10 @@
+*-13.000000 5200 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+@28
+sim_system.system.cpu.rst
+sim_system.system.cpu.clk
+@23
+sim_system.system.cpu.addr[15:0]
+@22
+sim_system.system.cpu.pc[15:0]
+sim_system.system.cpu.state[7:0]
+sim_system.system.cpu.instr[7:0]

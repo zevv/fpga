@@ -1,0 +1,3 @@
+MO main NULL main.v vlg2D/main.bin 1228490097
+MO vga NULL vga.v vlg6A/vga.bin 1228490097
+MO uart_rx NULL uart_rx.v vlg21/uart__rx.bin 1228490097

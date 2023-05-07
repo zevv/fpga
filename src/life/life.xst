@@ -1,0 +1,1 @@
+run -ifn life.work -ifmt mixed -top life -ofn life.ngc -ofmt NGC -p xc3s200-ft256-4 -opt_mode Speed -opt_level 1

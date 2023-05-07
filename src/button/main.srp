@@ -1,0 +1,435 @@
+Release 10.1 - xst K.31 (lin)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "main.work"
+Input Format                       : mixed
+
+---- Target Parameters
+Output File Name                   : "main.ngc"
+Output Format                      : NGC
+Target Device                      : xc3s200-ft256-4
+
+---- Source Options
+Top Module Name                    : main
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "main.v" in library work
+Compiling verilog file "uart_rx.v" in library work
+Module <main> compiled
+Compiling verilog file "uart_tx.v" in library work
+Module <uart_rx> compiled
+Compiling verilog file "display.v" in library work
+Module <uart_tx> compiled
+Module <display> compiled
+No errors in compilation
+Analysis of file <"main.work"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <main> in library <work>.
+
+Analyzing hierarchy for module <display> in library <work>.
+
+Analyzing hierarchy for module <uart_rx> in library <work>.
+
+Analyzing hierarchy for module <uart_tx> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <main>.
+Module <main> is correct for synthesis.
+ 
+Analyzing module <display> in library <work>.
+Module <display> is correct for synthesis.
+ 
+Analyzing module <uart_rx> in library <work>.
+Module <uart_rx> is correct for synthesis.
+ 
+Analyzing module <uart_tx> in library <work>.
+Module <uart_tx> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <display>.
+    Related source file is "display.v".
+WARNING:Xst:646 - Signal <val> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 16x8-bit ROM for signal <o_disp_seg$mux0000> created at line 34.
+    Found 8-bit register for signal <o_disp_seg>.
+    Found 4-bit register for signal <o_disp_an>.
+    Found 2-bit register for signal <annr>.
+    Found 11-bit up counter for signal <count>.
+    Found 1-of-4 decoder for signal <o_disp_an$mux0000> created at line 20.
+    Found 2-bit adder for signal <old_annr_2$addsub0000> created at line 18.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred  14 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Decoder(s).
+Unit <display> synthesized.
+
+
+Synthesizing Unit <uart_rx>.
+    Related source file is "uart_rx.v".
+WARNING:Xst:646 - Signal <bits<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 5-bit up counter for signal <bitnum>.
+    Found 10-bit register for signal <bits>.
+    Found 17-bit up counter for signal <div>.
+    Found 1-bit register for signal <p2_rxd>.
+    Found 1-bit register for signal <p3_rxd>.
+    Found 1-bit register for signal <receiving>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  13 D-type flip-flop(s).
+Unit <uart_rx> synthesized.
+
+
+Synthesizing Unit <uart_tx>.
+    Related source file is "uart_tx.v".
+    Found 1-bit register for signal <o_busy>.
+    Found 5-bit up counter for signal <bitnum>.
+    Found 8-bit register for signal <data>.
+    Found 11-bit up counter for signal <div>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   9 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <uart_tx> synthesized.
+
+
+Synthesizing Unit <main>.
+    Related source file is "main.v".
+WARNING:Xst:646 - Signal <uart_tx_busy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 16-bit register for signal <display_data>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <main> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 16x8-bit ROM                                          : 1
+# Adders/Subtractors                                   : 2
+ 11-bit adder                                          : 1
+ 2-bit adder                                           : 1
+# Counters                                             : 5
+ 11-bit up counter                                     : 2
+ 17-bit up counter                                     : 1
+ 5-bit up counter                                      : 2
+# Registers                                            : 25
+ 1-bit register                                        : 20
+ 10-bit register                                       : 1
+ 2-bit register                                        : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 2
+# Multiplexers                                         : 2
+ 1-bit 10-to-1 multiplexer                             : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file '3s200.nph' in environment /opt/Xilinx/10.1/ISE.
+
+Synthesizing (advanced) Unit <display>.
+INFO:Xst - In order to maximize performance and save block RAM resources, the small ROM <Mrom_o_disp_seg_mux0000> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <display> synthesized (advanced).
+WARNING:Xst:2677 - Node <bits_0> of sequential type is unconnected in block <uart_rx>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 16x8-bit ROM                                          : 1
+# Adders/Subtractors                                   : 2
+ 11-bit adder                                          : 1
+ 2-bit adder                                           : 1
+# Counters                                             : 5
+ 11-bit up counter                                     : 2
+ 17-bit up counter                                     : 1
+ 5-bit up counter                                      : 2
+# Registers                                            : 51
+ Flip-Flops                                            : 51
+# Multiplexers                                         : 2
+ 1-bit 10-to-1 multiplexer                             : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <o_disp_seg_0> (without init value) has a constant value of 1 in block <display>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <main> ...
+
+Optimizing unit <display> ...
+
+Optimizing unit <uart_rx> ...
+
+Optimizing unit <uart_tx> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+
+Final Macro Processing ...
+
+Processing Unit <main> :
+	Found 2-bit shift register for signal <uart_rx/bits_8>.
+Unit <main> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 97
+ Flip-Flops                                            : 97
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+Top Level Output File Name         : main.ngc
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : no
+
+Design Statistics
+# IOs                              : 23
+
+Cell Usage :
+# BELS                             : 197
+#      GND                         : 1
+#      INV                         : 8
+#      LUT1                        : 36
+#      LUT2                        : 9
+#      LUT3                        : 20
+#      LUT3_D                      : 4
+#      LUT4                        : 29
+#      LUT4_D                      : 1
+#      MUXCY                       : 41
+#      MUXF5                       : 10
+#      MUXF6                       : 1
+#      VCC                         : 1
+#      XORCY                       : 36
+# FlipFlops/Latches                : 98
+#      FD                          : 25
+#      FDE                         : 32
+#      FDR                         : 11
+#      FDRE                        : 29
+#      FDS                         : 1
+# Shift Registers                  : 1
+#      SRL16E                      : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 22
+#      IBUF                        : 1
+#      OBUF                        : 21
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200ft256-4 
+
+ Number of Slices:                       74  out of   1920     3%  
+ Number of Slice Flip Flops:             98  out of   3840     2%  
+ Number of 4 input LUTs:                108  out of   3840     2%  
+    Number used as logic:               107
+    Number used as Shift registers:       1
+ Number of IOs:                          23
+ Number of bonded IOBs:                  23  out of    173    13%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+i_clk                              | BUFGP                  | 99    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 9.312ns (Maximum Frequency: 107.388MHz)
+   Minimum input arrival time before clock: 1.825ns
+   Maximum output required time after clock: 11.629ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'i_clk'
+  Clock period: 9.312ns (frequency: 107.388MHz)
+  Total number of paths / destination ports: 4010 / 199
+-------------------------------------------------------------------------
+Delay:               9.312ns (Levels of Logic = 5)
+  Source:            uart_tx/div_4 (FF)
+  Destination:       uart_tx/o_busy (FF)
+  Source Clock:      i_clk rising
+  Destination Clock: i_clk rising
+
+  Data Path: uart_tx/div_4 to uart_tx/o_busy
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.720   1.216  uart_tx/div_4 (uart_tx/div_4)
+     LUT4:I0->O            2   0.551   0.945  uart_tx/div_reset19 (uart_tx/div_reset19)
+     LUT4:I2->O            1   0.551   0.000  uart_rx/receiving_and0000_SW2_G (N20)
+     MUXF5:I1->O           1   0.360   0.827  uart_rx/receiving_and0000_SW2 (N13)
+     LUT4:I3->O           14   0.551   1.213  uart_tx/div_reset54 (uart_tx/div_reset)
+     LUT4:I3->O            1   0.551   0.801  uart_tx/o_busy_and0000 (uart_tx/o_busy_and0000)
+     FDRE:R                    1.026          uart_tx/o_busy
+    ----------------------------------------
+    Total                      9.312ns (4.310ns logic, 5.002ns route)
+                                       (46.3% logic, 53.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'i_clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.825ns (Levels of Logic = 1)
+  Source:            i_rxd (PAD)
+  Destination:       uart_rx/p2_rxd (FF)
+  Destination Clock: i_clk rising
+
+  Data Path: i_rxd to uart_rx/p2_rxd
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.821   0.801  i_rxd_IBUF (i_rxd_IBUF)
+     FD:D                      0.203          uart_rx/p2_rxd
+    ----------------------------------------
+    Total                      1.825ns (1.024ns logic, 0.801ns route)
+                                       (56.1% logic, 43.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'i_clk'
+  Total number of paths / destination ports: 37 / 20
+-------------------------------------------------------------------------
+Offset:              11.629ns (Levels of Logic = 6)
+  Source:            uart_tx/bitnum_1 (FF)
+  Destination:       o_txd (PAD)
+  Source Clock:      i_clk rising
+
+  Data Path: uart_tx/bitnum_1 to o_txd
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            10   0.720   1.473  uart_tx/bitnum_1 (uart_tx/bitnum_1)
+     LUT3:I0->O            1   0.551   0.000  uart_tx/Mmux__COND_4_7 (uart_tx/Mmux__COND_4_7)
+     MUXF5:I1->O           1   0.360   0.000  uart_tx/Mmux__COND_4_6_f5 (uart_tx/Mmux__COND_4_6_f5)
+     MUXF6:I1->O           1   0.342   0.827  uart_tx/Mmux__COND_4_5_f6 (uart_tx/Mmux__COND_4_5_f6)
+     LUT4:I3->O            1   0.551   0.000  uart_tx/o_tx1 (uart_tx/o_tx)
+     MUXF5:I1->O           1   0.360   0.801  uart_tx/o_tx_f5 (o_txd_OBUF)
+     OBUF:I->O                 5.644          o_txd_OBUF (o_txd)
+    ----------------------------------------
+    Total                     11.629ns (8.528ns logic, 3.101ns route)
+                                       (73.3% logic, 26.7% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.75 secs
+ 
+--> 
+
+
+Total memory usage is 126216 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

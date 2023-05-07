@@ -1,0 +1,3 @@
+verilog work main.v
+verilog work vga.v
+verilog work uart_rx.v

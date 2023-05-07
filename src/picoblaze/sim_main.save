@@ -1,0 +1,10 @@
+*-14.000000 119760 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+@28
+sim_main.clk
+@22
+sim_main.address[9:0]
+sim_main.instruction[17:0]
+sim_main.out_port[7:0]
+sim_main.port_id[7:0]
+@28
+sim_main.write_strobe

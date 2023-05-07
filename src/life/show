@@ -1,0 +1,27 @@
+#!/usr/bin/perl 
+
+open(IN, "sim_life.vcd") or die "au : $!\n";
+
+$w = 25;
+$h = 25;
+
+print "\e[2J\e[H";
+
+while(<IN>) {
+	if(/^b(.+) &$/) {
+		$bits = $1;
+		
+		$bits = "0" x ($w*$h-length($bits)) . $bits;
+		
+		$bits =~ s/0/ /g;
+		$bits =~ s/1/#/g;
+		
+		for($i=0; $i<$w*$h; $i+=$w) {
+			print substr($bits, $i, $w) . "\n";
+		}
+		print "\e[H";
+		select undef, undef, undef, 0.3;
+	}
+}
+		
+

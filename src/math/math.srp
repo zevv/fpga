@@ -1,0 +1,242 @@
+Release 7.1i - xst H.38
+Copyright (c) 1995-2005 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+     7.1) Device utilization summary
+     7.2) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "math.work"
+Input Format                       : mixed
+
+---- Target Parameters
+Output File Name                   : "math.ngc"
+Output Format                      : NGC
+Target Device                      : xc3s200-ft256-4
+
+---- Source Options
+Top Module Name                    : math
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "math.v"
+Module <math> compiled
+No errors in compilation
+Analysis of file <"math.work"> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <math>.
+Module <math> is correct for synthesis.
+ 
+    Set property "resynthesize = true" for unit <math>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <math>.
+    Related source file is "math.v".
+WARNING:Xst:647 - Input <rst> is never used.
+WARNING:Xst:646 - Signal <ab> is assigned but never used.
+WARNING:Xst:646 - Signal <cd> is assigned but never used.
+WARNING:Xst:643 - The result of a 16x16-bit multiplication found at "math.v" line 19 is partially used. Only the 16 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - The result of a 16x16-bit multiplication found at "math.v" line 19 is partially used. Only the 16 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 16-bit register for signal <result>.
+    Found 16-bit adder for signal <$n0006> created at line 19.
+    Found 16x16-bit multiplier for signal <$n0007> created at line 19.
+    Found 16x16-bit multiplier for signal <$n0008> created at line 19.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Multiplier(s).
+Unit <math> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                      : 2
+ 16x16-bit multiplier              : 2
+# Adders/Subtractors               : 1
+ 16-bit adder                      : 1
+# Registers                        : 1
+ 16-bit register                   : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Loading device for application Rf_Device from file '3s200.nph' in environment /opt/xilinx.
+
+Optimizing unit <math> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+Top Level Output File Name         : math.ngc
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : no
+
+Design Statistics
+# IOs                              : 82
+
+Macro Statistics :
+# Registers                        : 1
+#      16-bit register             : 1
+# Adders/Subtractors               : 1
+#      16-bit adder                : 1
+# Multipliers                      : 2
+#      16x16-bit multiplier        : 2
+
+Cell Usage :
+# BELS                             : 47
+#      GND                         : 1
+#      LUT2                        : 16
+#      MUXCY                       : 15
+#      XORCY                       : 15
+# FlipFlops/Latches                : 16
+#      FD                          : 16
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 80
+#      IBUF                        : 64
+#      OBUF                        : 16
+# MULTs                            : 2
+#      MULT18X18                   : 2
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200ft256-4 
+
+ Number of Slices:                       8  out of   1920     0%  
+ Number of Slice Flip Flops:            16  out of   3840     0%  
+ Number of 4 input LUTs:                16  out of   3840     0%  
+ Number of bonded IOBs:                 82  out of    173    47%  
+ Number of MULT18X18s:                   2  out of     12    16%  
+ Number of GCLKs:                        1  out of      8    12%  
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 16    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 8.413ns
+   Maximum output required time after clock: 7.165ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 4624 / 16
+-------------------------------------------------------------------------
+Offset:              8.413ns (Levels of Logic = 5)
+  Source:            a<14> (PAD)
+  Destination:       result_15 (FF)
+  Destination Clock: clk rising
+
+  Data Path: a<14> to result_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.821   0.801  a_14_IBUF (a_14_IBUF)
+     MULT18X18:A14->P14    1   3.493   1.140  Mmult__n0007_inst_mult_0 (_n0007<14>)
+     LUT2:I0->O            1   0.551   0.000  math__n0006<14>lut (N17)
+     MUXCY:S->O            0   0.500   0.000  math__n0006<14>cy (math__n0006<14>_cyo)
+     XORCY:CI->O           1   0.904   0.000  math__n0006<15>_xor (_n0006<15>)
+     FD:D                      0.203          result_15
+    ----------------------------------------
+    Total                      8.413ns (6.472ns logic, 1.941ns route)
+                                       (76.9% logic, 23.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              7.165ns (Levels of Logic = 1)
+  Source:            result_15 (FF)
+  Destination:       result<15> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: result_15 to result<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.720   0.801  result_15 (result_15)
+     OBUF:I->O                 5.644          result_15_OBUF (result<15>)
+    ----------------------------------------
+    Total                      7.165ns (6.364ns logic, 0.801ns route)
+                                       (88.8% logic, 11.2% route)
+
+=========================================================================
+CPU : 7.48 / 12.57 s | Elapsed : 7.00 / 8.00 s
+ 
+--> 
+
+
+Total memory usage is 83692 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

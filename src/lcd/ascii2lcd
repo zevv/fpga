@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+$max = (640 / 6.0) + 2;
+
+print "\x00";
+
+while(<>) {
+	chomp;
+	$l = $_;
+	$l =~ s/\t/        /g;
+	
+	$l = substr($l, 0, $max);
+	$l .= " " x ($max-length($l));
+	
+	print $l;
+	
+	exit if($. == 37);
+}

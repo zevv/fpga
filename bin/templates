@@ -1,0 +1,97 @@
+#!/usr/bin/perl
+
+use strict;
+
+my($templates);
+my($section);
+my(@sections);
+my(%text);
+
+
+$templates="/windows/Xilinx/data/*.tpl";
+
+open(IN, "cat $templates | ");
+while(<IN>) {
+	if(/^\[(.+)\]/) {
+		$section = $1 . "\.";
+		push @sections, $section;
+	} elsif(/text...=\"(.+)\"/) {
+		$text{$section} .= $1 . "\n";	
+	}
+}
+close(IN);
+
+
+sub choose
+{
+	my($current) = @_;
+	my($fixedcurrent);
+	my(%next);
+	my($next);
+	my($n, $s, $cmd, $rv, $ans);
+
+
+	while(1) {	
+
+		undef %next;
+		undef $cmd;
+		
+		if(defined($text{$current . "."})) {
+		
+			open(OUT, ">/tmp/n");
+			print OUT $text{$current . "."};
+			close OUT;
+			
+			$cmd = "less /tmp/n";
+			system($cmd);
+			return;
+		
+		} else {
+			$fixedcurrent = $current;
+			$fixedcurrent =~ s/[\(\)]/./g;
+		
+			foreach $s (@sections) {
+				if(length($current)) {
+					if($s =~ /^$fixedcurrent\.(.+?)\./) {
+						$next{$1} = 1;
+					}
+				} else {
+					if($s =~ /(.+?)\./) {
+						$next{$1} = 1;
+					}
+				}
+			}
+			
+			$cmd = "whiptail --menu '' 0 0 0 ";
+			$cmd .= " --backtitle 'Language templates: $current'";
+			$cmd .= " --default-item '$ans'";
+			if(length($current)) {
+				$cmd .= " .. ''";
+			}
+			foreach $n (sort keys %next) {
+				$n =~ s/\.//;
+				$cmd .= " '$n' ''";
+			}
+			$cmd .= " 2>/tmp/n";
+			
+			$rv = system($cmd);
+			
+			if($rv == 0) {
+				$ans = `cat /tmp/n`;
+				chomp $ans;
+				return if($ans eq "..");
+				if(length($current)) {
+					$next = $current . "." . $ans;
+				} else {
+					$next = $ans;
+				}
+				choose($next);
+			} else {
+				exit;
+			}
+		}
+	}	
+}
+
+choose('Verilog');
+#choose('Verilog.Device Primitive Instantiation.FPGA.RAM / ROM.Block RAM.Virtex-II/II-Pro, Spartan-3.Dual-Port (Mis-matched Port Widths)');

@@ -1,0 +1,4 @@
+MO display NULL display.v vlg1E/display.bin 1228490421
+MO main NULL main.v vlg2D/main.bin 1228490421
+MO uart_rx NULL uart_rx.v vlg21/uart__rx.bin 1228490421
+MO uart_tx NULL uart_tx.v vlg2B/uart__tx.bin 1228490421

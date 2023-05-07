@@ -1,0 +1,3 @@
+
+NET "rst"		LOC="l13";
+NET "clk"		LOC="t9";

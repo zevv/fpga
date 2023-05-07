@@ -1,0 +1,15 @@
+*-23.000000 10540000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+@28
+sim_main.main.uart_rx.i_rxd
+@24
+sim_main.main.uart_rx.bitnum[4:0]
+@28
+sim_main.main.uart_rx.bitnum_count
+sim_main.main.uart_rx.bitnum_reset
+@23
+sim_main.main.uart_data[7:0]
+@28
+sim_main.main.uart_rx.shift_bit
+sim_main.main.uart_rx.o_data_valid
+@22
+sim_main.main.display_data[15:0]

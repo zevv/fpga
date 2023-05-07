@@ -1,0 +1,15 @@
+*-17.000000 412200 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+@28
+sim_i2c.i2c.active
+sim_i2c.i2c.prev_scl
+sim_i2c.i2c.prev_sda
+sim_i2c.i2c.scl
+sim_i2c.i2c.sda
+@22
+sim_i2c.i2c.rx_data[7:0]
+sim_i2c.i2c.rx_bit_num[5:0]
+@28
+sim_i2c.i2c.o_ack
+sim_i2c.i2c.start_condition
+sim_i2c.i2c.stop_condition
+sim_i2c.i2c.address_ok

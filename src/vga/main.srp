@@ -1,0 +1,849 @@
+Release 10.1 - xst K.31 (lin)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "main.work"
+Input Format                       : mixed
+
+---- Target Parameters
+Output File Name                   : "main.ngc"
+Output Format                      : NGC
+Target Device                      : xc3s200-ft256-4
+
+---- Source Options
+Top Module Name                    : main
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "main.v" in library work
+Compiling verilog file "vga.v" in library work
+Module <main> compiled
+Compiling verilog include file "ramdata/fontrom.init"
+Compiling verilog file "uart_rx.v" in library work
+Module <vga> compiled
+Module <uart_rx> compiled
+No errors in compilation
+Analysis of file <"main.work"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <main> in library <work>.
+
+Analyzing hierarchy for module <vga> in library <work>.
+
+Analyzing hierarchy for module <uart_rx> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <main>.
+WARNING:Xst:905 - "main.v" line 40: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <ramdata_0>, <ramdata_1>, <ramdata_2>, <ramdata_3>
+Module <main> is correct for synthesis.
+ 
+    Set user-defined property "INITP_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_08 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_09 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_0A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_0B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_0C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_0D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_0E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_0F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_10 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_11 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_12 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_13 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_14 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_15 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_16 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_17 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_18 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_19 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_1A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_1B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_1C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_1D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_1E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_1F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_20 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_21 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_22 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_23 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_24 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_25 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_26 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_27 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_28 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_29 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_2A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_2B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_2C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_2D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_2E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_2F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_30 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_31 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_32 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_33 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_34 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_35 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_36 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_37 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_38 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_39 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_3A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_3B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_3C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_3D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_3E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_3F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_A =  000" for instance <ram0> in unit <main>.
+    Set user-defined property "INIT_B =  000" for instance <ram0> in unit <main>.
+    Set user-defined property "SIM_COLLISION_CHECK =  ALL" for instance <ram0> in unit <main>.
+    Set user-defined property "SRVAL_A =  000" for instance <ram0> in unit <main>.
+    Set user-defined property "SRVAL_B =  000" for instance <ram0> in unit <main>.
+    Set user-defined property "WRITE_MODE_A =  WRITE_FIRST" for instance <ram0> in unit <main>.
+    Set user-defined property "WRITE_MODE_B =  WRITE_FIRST" for instance <ram0> in unit <main>.
+    Set user-defined property "INITP_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_08 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_09 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_0A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_0B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_0C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_0D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_0E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_0F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_10 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_11 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_12 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_13 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_14 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_15 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_16 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_17 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_18 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_19 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_1A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_1B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_1C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_1D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_1E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_1F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_20 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_21 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_22 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_23 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_24 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_25 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_26 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_27 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_28 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_29 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_2A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_2B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_2C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_2D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_2E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_2F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_30 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_31 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_32 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_33 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_34 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_35 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_36 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_37 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_38 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_39 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_3A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_3B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_3C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_3D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_3E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_3F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_A =  000" for instance <ram1> in unit <main>.
+    Set user-defined property "INIT_B =  000" for instance <ram1> in unit <main>.
+    Set user-defined property "SIM_COLLISION_CHECK =  ALL" for instance <ram1> in unit <main>.
+    Set user-defined property "SRVAL_A =  000" for instance <ram1> in unit <main>.
+    Set user-defined property "SRVAL_B =  000" for instance <ram1> in unit <main>.
+    Set user-defined property "WRITE_MODE_A =  WRITE_FIRST" for instance <ram1> in unit <main>.
+    Set user-defined property "WRITE_MODE_B =  WRITE_FIRST" for instance <ram1> in unit <main>.
+    Set user-defined property "INITP_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_08 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_09 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_0A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_0B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_0C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_0D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_0E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_0F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_10 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_11 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_12 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_13 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_14 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_15 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_16 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_17 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_18 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_19 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_1A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_1B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_1C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_1D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_1E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_1F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_20 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_21 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_22 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_23 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_24 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_25 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_26 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_27 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_28 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_29 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_2A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_2B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_2C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_2D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_2E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_2F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_30 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_31 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_32 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_33 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_34 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_35 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_36 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_37 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_38 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_39 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_3A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_3B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_3C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_3D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_3E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_3F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_A =  000" for instance <ram2> in unit <main>.
+    Set user-defined property "INIT_B =  000" for instance <ram2> in unit <main>.
+    Set user-defined property "SIM_COLLISION_CHECK =  ALL" for instance <ram2> in unit <main>.
+    Set user-defined property "SRVAL_A =  000" for instance <ram2> in unit <main>.
+    Set user-defined property "SRVAL_B =  000" for instance <ram2> in unit <main>.
+    Set user-defined property "WRITE_MODE_A =  WRITE_FIRST" for instance <ram2> in unit <main>.
+    Set user-defined property "WRITE_MODE_B =  WRITE_FIRST" for instance <ram2> in unit <main>.
+    Set user-defined property "INITP_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_08 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_09 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_0A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_0B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_0C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_0D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_0E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_0F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_10 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_11 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_12 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_13 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_14 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_15 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_16 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_17 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_18 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_19 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_1A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_1B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_1C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_1D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_1E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_1F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_20 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_21 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_22 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_23 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_24 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_25 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_26 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_27 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_28 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_29 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_2A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_2B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_2C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_2D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_2E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_2F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_30 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_31 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_32 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_33 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_34 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_35 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_36 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_37 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_38 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_39 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_3A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_3B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_3C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_3D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_3E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_3F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_A =  000" for instance <ram3> in unit <main>.
+    Set user-defined property "INIT_B =  000" for instance <ram3> in unit <main>.
+    Set user-defined property "SIM_COLLISION_CHECK =  ALL" for instance <ram3> in unit <main>.
+    Set user-defined property "SRVAL_A =  000" for instance <ram3> in unit <main>.
+    Set user-defined property "SRVAL_B =  000" for instance <ram3> in unit <main>.
+    Set user-defined property "WRITE_MODE_A =  WRITE_FIRST" for instance <ram3> in unit <main>.
+    Set user-defined property "WRITE_MODE_B =  WRITE_FIRST" for instance <ram3> in unit <main>.
+Analyzing module <vga> in library <work>.
+Module <vga> is correct for synthesis.
+ 
+    Set user-defined property "INIT =  000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INITP_00 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_00 =  00001E3F333F2D3F1E000000001E212D2133211E000000000000000000000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_01 =  001C0836361C1C000000000000081C3E1C08000000000000081C3E3E14000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_02 =  FFFFF3E1F3FFFFFF00000000000C1E0C0000000000001C083E3E1C0800000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_03 =  22221E04283C00FFFFFFFFF3EDDEEDF3FFFF000000000C1221120C0000FFFFFF" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_04 =  22223E223E00000000030704043C243C00000000083E081C22221C000000001C" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_05 =  3E3830200000000002060E3E0E060200000000082A1C361C2A08000000003333" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_06 =  2A2A2A3C0000001200121212121200000000081C2A082A1C0800000000203038" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_07 =  1C08000000001F1F1F0000000000001C22122824120A24221C0000002828283C" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_08 =  0000000000081C2A0808080800000000080808082A1C080000003E081C2A082A" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_09 =  000000001E020202000000000000000008043E040800000000000008103E1008" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_0A =  00000008081C1C3E3E00000000003E3E1C1C080800000000000012213F211200" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_0B =  0000000000000014141400000008000808080808000000000000000000000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_0C =  0032320408102626000000081C2A281C0A2A1C08000000143E14143E14000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_0D =  100808080808102000000000000000000808080000002C122A040A120C000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_0E =  08083E080800000000000000082A1C2A08000000040810101010100804000020" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_0F =  0000000000000000000000003E000000000004080C0C00000000000000000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_10 =  10101810000000001C22262A32221C0000020204040808101020200000001818" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_11 =  141810000000001C22201820221C000000003E04081020221C00000000381010" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_12 =  203E000000001C2222221E021C000000001C2220201E023E0000000038103E12" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_13 =  00000000001C203C2222221C000000001C22221C22221C000000000808081020" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_14 =  0000000020100804081020000004080C0C000C0C000000000000181800181800" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_15 =  0000000800081020221C00000000040810201008040000000000003E003E0000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_16 =  00001E22221E22221E000000002222223E22221C000000001C021E2A2E221C00" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_17 =  003E02021E02023E000000001E22222222221E000000001C22020202221C0000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_18 =  2222223E222222000000001C22223202221C000000000202021E02023E000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_19 =  120A060A1222000000001C222220202020000000001C08080808081C00000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_1A =  22322A2622000000002222222A2A3622000000003E0202020202020000000022" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_1B =  2222221C000000000202021E22221E000000001C22222222221C000000002222" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_1C =  08083E000000001C22201C02221C000000002222221E22221E000000201C2A22" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_1D =  22220000000008142222222222000000001C2222222222220000000008080808" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_1E =  3E000000000808081422222200000000222214081422220000000022362A2A22" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_1F =  0C002020101008080404020200003010101010101010300000003E0204081020" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_20 =  0000003F00000000000000000000000000002214080000000C08080808080808" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_21 =  00001E2222221E0202000000002C3222223C0000000000000000000000100804" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_22 =  003C023E221C0000000000003C2222223C2020000000001C2202221C00000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_23 =  222222221E020200001C203C2222223C000000000000080808081C0830000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_24 =  120E0A12020200000608080808080C0008000000001C0808080C000800000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_25 =  22261A0000000000002A2A2A2A1E0000000000001C08080808080C0000000022" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_26 =  223C0000000002021E2222221E0000000000001C2222221C0000000000002222" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_27 =  1C0808000000001E201C023C000000000000020202261A0000000020203C2222" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_28 =  00000000000008142222220000000000002C3222222200000000000030080808" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_29 =  0000001C203C222222220000000000002214081422000000000000142A2A2A2A" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_2A =  04000008080808080808080820101010100810101010200000003E0408103E00" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_2B =  0000003E2222140800000000000000000000001A2C0004080808081008080808" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_2C =  00003C023E221C0008100000002C322222220014000004081C22020202221C00" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_2D =  002C3222223C0010080000002C3222223C0014000000002C3222223C00140800" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_2E =  3C023E221C0014080004083C0202221C0000000000002C3222223C1824180000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_2F =  080808080014000000003C023E221C0008040000003C023E221C001400000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_30 =  223E22221C210000000808080808000804000000080808080800140800000008" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_31 =  2A1C0000000000003E02021E02023E080000002222223E22221C1A0000002222" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_32 =  1C0014000000001C2222221C0014080000003A0A0A1E0A0A3C000000003C0A3A" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_33 =  0008040000002C322222220014080000001C2222221C0008040000001C222222" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_34 =  22110000001C22222222221C21001C203C222222220014000000002C32222222" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_35 =  000000001E2202020E02120C0000081C2A0A2A1C0800000000001C2222222222" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_36 =  0000000608081C0808300000000022123A120E120E0000000008083E083E1422" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_37 =  00001C2222221C00081000000008080808080008100000002C3222223C000810" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_38 =  00222222322A26221A000000222222261A001A2C0000002C3222222200081000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_39 =  1C22020408000800000000003C001824241800000000003C0038242438000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_3A =  221408142406040000000020203E000000000000000002023E00000000000000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_3B =  12240000000000000010101010100010000000103C1A14081424060400003810" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_3C =  AA55AA55AA882288228822882288228800000012242412000000000000002412" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_3D =  080808080808080808080808080808BBEEBBEEBBEEBBEEBBEEBBAA55AA55AA55" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_3E =  000000141414141414171414141408080808080F080F0808080808080808080F" for instance <fontrom> in unit <vga>.
+    Set user-defined property "INIT_3F =  1414141414141417101714141408080808080F080F0000001414141414141F00" for instance <fontrom> in unit <vga>.
+    Set user-defined property "SRVAL =  000" for instance <fontrom> in unit <vga>.
+    Set user-defined property "WRITE_MODE =  WRITE_FIRST" for instance <fontrom> in unit <vga>.
+Analyzing module <uart_rx> in library <work>.
+Module <uart_rx> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <uart_rx>.
+    Related source file is "uart_rx.v".
+WARNING:Xst:646 - Signal <bits<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 5-bit up counter for signal <bitnum>.
+    Found 10-bit register for signal <bits>.
+    Found 17-bit up counter for signal <div>.
+    Found 1-bit register for signal <p2_rxd>.
+    Found 1-bit register for signal <p3_rxd>.
+    Found 1-bit register for signal <receiving>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  13 D-type flip-flop(s).
+Unit <uart_rx> synthesized.
+
+
+Synthesizing Unit <vga>.
+    Related source file is "vga.v".
+WARNING:Xst:646 - Signal <rom_dop> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:643 - "vga.v" line 173: The result of a 6x8-bit multiplication is partially used. Only the 13 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "vga.v" line 174: The result of a 8x4-bit multiplication is partially used. Only the 11 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 13-bit adder for signal <ram_addr>.
+    Found 3-bit up counter for signal <char_x>.
+    Found 5-bit up counter for signal <char_y>.
+    Found 8-bit up counter for signal <col>.
+    Found 3-bit register for signal <p2_char_x>.
+    Found 5-bit register for signal <p2_char_y>.
+    Found 1-bit register for signal <p2_hactive>.
+    Found 1-bit register for signal <p2_hsync>.
+    Found 1-bit register for signal <p2_vactive>.
+    Found 1-bit register for signal <p2_vsync>.
+    Found 1-bit register for signal <p3_active>.
+    Found 3-bit register for signal <p3_char_x>.
+    Found 1-bit register for signal <p3_hsync>.
+    Found 1-bit register for signal <p3_vsync>.
+    Found 6x8-bit multiplier for signal <ram_addr$mult0001> created at line 173.
+    Found 11-bit adder for signal <rom_addr>.
+    Found 8x4-bit multiplier for signal <rom_addr$mult0001> created at line 174.
+    Found 6-bit up counter for signal <row>.
+    Found 11-bit up counter for signal <screen_x>.
+    Found 10-bit up counter for signal <screen_y>.
+    Summary:
+	inferred   6 Counter(s).
+	inferred  18 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Multiplier(s).
+	inferred   1 Multiplexer(s).
+Unit <vga> synthesized.
+
+
+Synthesizing Unit <main>.
+    Related source file is "main.v".
+    Found 13-bit up counter for signal <uart_addr>.
+    Found 1-of-4 decoder for signal <uart_we>.
+    Found 8-bit 4-to-1 multiplexer for signal <vga_data>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   8 Multiplexer(s).
+	inferred   1 Decoder(s).
+Unit <main> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 2
+ 6x8-bit multiplier                                    : 1
+ 8x4-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 2
+ 11-bit adder                                          : 1
+ 13-bit adder                                          : 1
+# Counters                                             : 9
+ 10-bit up counter                                     : 1
+ 11-bit up counter                                     : 1
+ 13-bit up counter                                     : 1
+ 17-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
+ 5-bit up counter                                      : 2
+ 6-bit up counter                                      : 1
+ 8-bit up counter                                      : 1
+# Registers                                            : 14
+ 1-bit register                                        : 10
+ 10-bit register                                       : 1
+ 3-bit register                                        : 2
+ 5-bit register                                        : 1
+# Multiplexers                                         : 2
+ 1-bit 8-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file '3s200.nph' in environment /opt/Xilinx/10.1/ISE.
+
+Synthesizing (advanced) Unit <vga>.
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_ram_addr_mult0001 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_rom_addr_mult0001 by adding 1 register level(s).
+Unit <vga> synthesized (advanced).
+WARNING:Xst:2677 - Node <bits_0> of sequential type is unconnected in block <uart_rx>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 2
+ 6x8-bit multiplier                                    : 1
+ 8x4-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 2
+ 11-bit adder                                          : 1
+ 13-bit adder                                          : 1
+# Counters                                             : 9
+ 10-bit up counter                                     : 1
+ 11-bit up counter                                     : 1
+ 13-bit up counter                                     : 1
+ 17-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
+ 5-bit up counter                                      : 2
+ 6-bit up counter                                      : 1
+ 8-bit up counter                                      : 1
+# Registers                                            : 30
+ Flip-Flops                                            : 30
+# Multiplexers                                         : 2
+ 1-bit 8-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <main> ...
+
+Optimizing unit <uart_rx> ...
+
+Optimizing unit <vga> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+
+Final Macro Processing ...
+
+Processing Unit <main> :
+	Found 2-bit shift register for signal <uart_rx/bits_8>.
+	Found 2-bit shift register for signal <vga/p3_char_x_2>.
+	Found 2-bit shift register for signal <vga/p3_char_x_1>.
+	Found 2-bit shift register for signal <vga/p3_char_x_0>.
+Unit <main> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 100
+ Flip-Flops                                            : 100
+# Shift Registers                                      : 4
+ 2-bit shift register                                  : 4
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+Top Level Output File Name         : main.ngc
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : no
+
+Design Statistics
+# IOs                              : 8
+
+Cell Usage :
+# BELS                             : 353
+#      GND                         : 1
+#      INV                         : 12
+#      LUT1                        : 63
+#      LUT2                        : 25
+#      LUT2_L                      : 2
+#      LUT3                        : 32
+#      LUT3_D                      : 1
+#      LUT3_L                      : 2
+#      LUT4                        : 38
+#      LUT4_D                      : 4
+#      LUT4_L                      : 2
+#      MUXCY                       : 81
+#      MUXF5                       : 12
+#      MUXF6                       : 1
+#      VCC                         : 1
+#      XORCY                       : 76
+# FlipFlops/Latches                : 104
+#      FD                          : 12
+#      FDE                         : 8
+#      FDR                         : 15
+#      FDRE                        : 65
+#      FDS                         : 3
+#      FDSE                        : 1
+# RAMS                             : 5
+#      RAMB16_S9                   : 1
+#      RAMB16_S9_S9                : 4
+# Shift Registers                  : 4
+#      SRL16                       : 3
+#      SRL16E                      : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 7
+#      IBUF                        : 2
+#      OBUF                        : 5
+# MULTs                            : 2
+#      MULT18X18                   : 2
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200ft256-4 
+
+ Number of Slices:                      102  out of   1920     5%  
+ Number of Slice Flip Flops:            104  out of   3840     2%  
+ Number of 4 input LUTs:                185  out of   3840     4%  
+    Number used as logic:               181
+    Number used as Shift registers:       4
+ Number of IOs:                           8
+ Number of bonded IOBs:                   8  out of    173     4%  
+ Number of BRAMs:                         5  out of     12    41%  
+ Number of MULT18X18s:                    2  out of     12    16%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+i_clk                              | BUFGP                  | 112   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 9.984ns (Maximum Frequency: 100.160MHz)
+   Minimum input arrival time before clock: 5.057ns
+   Maximum output required time after clock: 11.327ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'i_clk'
+  Clock period: 9.984ns (frequency: 100.160MHz)
+  Total number of paths / destination ports: 5302 / 385
+-------------------------------------------------------------------------
+Delay:               9.984ns (Levels of Logic = 4)
+  Source:            vga/screen_x_10 (FF)
+  Destination:       vga/char_x_2 (FF)
+  Source Clock:      i_clk rising
+  Destination Clock: i_clk rising
+
+  Data Path: vga/screen_x_10 to vga/char_x_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              5   0.720   1.260  vga/screen_x_10 (vga/screen_x_10)
+     LUT4:I0->O            2   0.551   1.072  vga/screen_x_reset8 (vga/screen_x_reset8)
+     LUT3:I1->O           19   0.551   1.476  vga/screen_x_reset28 (vga/screen_x_reset)
+     LUT4:I3->O            9   0.551   1.319  vga/char_x_reset1 (vga/char_x_reset)
+     LUT2:I1->O            3   0.551   0.907  vga/char_x_or00001 (vga/char_x_or0000)
+     FDR:R                     1.026          vga/char_x_0
+    ----------------------------------------
+    Total                      9.984ns (3.950ns logic, 6.034ns route)
+                                       (39.6% logic, 60.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'i_clk'
+  Total number of paths / destination ports: 48 / 48
+-------------------------------------------------------------------------
+Offset:              5.057ns (Levels of Logic = 2)
+  Source:            i_reset (PAD)
+  Destination:       vga/screen_y_9 (FF)
+  Destination Clock: i_clk rising
+
+  Data Path: i_reset to vga/screen_y_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             8   0.821   1.422  i_reset_IBUF (i_reset_IBUF)
+     LUT2:I0->O           16   0.551   1.237  vga/row_or00001 (vga/row_or0000)
+     FDRE:R                    1.026          vga/row_0
+    ----------------------------------------
+    Total                      5.057ns (2.398ns logic, 2.659ns route)
+                                       (47.4% logic, 52.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'i_clk'
+  Total number of paths / destination ports: 26 / 5
+-------------------------------------------------------------------------
+Offset:              11.327ns (Levels of Logic = 5)
+  Source:            vga/p3_char_x_0 (FF)
+  Destination:       o_green (PAD)
+  Source Clock:      i_clk rising
+
+  Data Path: vga/p3_char_x_0 to o_green
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               4   0.720   1.256  vga/p3_char_x_0 (vga/p3_char_x_0)
+     LUT3:I0->O            1   0.551   0.000  vga/Mmux__COND_3_4 (vga/Mmux__COND_3_4)
+     MUXF5:I1->O           1   0.360   0.000  vga/Mmux__COND_3_3_f5 (vga/Mmux__COND_3_3_f5)
+     MUXF6:I1->O           1   0.342   0.996  vga/Mmux__COND_3_2_f6 (vga/p3_pixel)
+     LUT2:I1->O            3   0.551   0.907  vga/o_green1 (o_blue_OBUF)
+     OBUF:I->O                 5.644          o_green_OBUF (o_green)
+    ----------------------------------------
+    Total                     11.327ns (8.168ns logic, 3.159ns route)
+                                       (72.1% logic, 27.9% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.44 secs
+ 
+--> 
+
+
+Total memory usage is 130796 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

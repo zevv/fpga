@@ -1,0 +1,16 @@
+//! **************************************************************************
+// Written by: Map K.31 on Fri Dec 05 16:15:09 2008
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "i_rxd" LOCATE = SITE "T13" LEVEL 1;
+COMP "o_vsync" LOCATE = SITE "T10" LEVEL 1;
+COMP "i_clk" LOCATE = SITE "T9" LEVEL 1;
+COMP "i_reset" LOCATE = SITE "L14" LEVEL 1;
+COMP "o_blue" LOCATE = SITE "R11" LEVEL 1;
+COMP "o_red" LOCATE = SITE "R12" LEVEL 1;
+COMP "o_green" LOCATE = SITE "T12" LEVEL 1;
+COMP "o_hsync" LOCATE = SITE "R9" LEVEL 1;
+NET "i_clk_BUFGP/IBUFG" BEL "i_clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+

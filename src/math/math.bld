@@ -1,0 +1,22 @@
+Release 7.1i ngdbuild H.38
+Copyright (c) 1995-2005 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngdbuild -intstyle ise -dd _ngo -uc math.ucf -p xc3s200-ft256-4
+math.ngc math.ngd 
+
+Reading NGO file '/home/ico/prjs/fpga/src/math/math.ngc' ...
+
+Applying constraints in "math.ucf" to the design...
+
+Checking timing specifications ...
+Checking expanded design ...
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 51392 kilobytes
+
+Writing NGD file "math.ngd" ...
+
+Writing NGDBUILD log file "math.bld"...

@@ -1,0 +1,5 @@
+
+
+NET "clk"  		LOC = "t9";
+NET "en_out"		LOC = "r9";
+NET "dout"		LOC = "t10";

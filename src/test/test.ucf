@@ -1,0 +1,3 @@
+NET "i_btn<0>"		LOC="m13";
+NET "o_led<0>"		LOC="k12";
+

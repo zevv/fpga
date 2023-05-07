@@ -1,0 +1,31 @@
+
+NET "i_clk"		LOC="t9";
+
+NET "o_disp_an<3>"	LOC="e13";
+NET "o_disp_an<2>"	LOC="f14";
+NET "o_disp_an<1>"	LOC="g14";
+NET "o_disp_an<0>"	LOC="d14";
+
+NET "o_disp_seg<7>"	LOC="e14";	// a
+NET "o_disp_seg<6>"	LOC="g13";	// b
+NET "o_disp_seg<5>"	LOC="n15";	// c
+NET "o_disp_seg<4>"	LOC="p15";	// d
+NET "o_disp_seg<3>"	LOC="r16";	// e
+NET "o_disp_seg<2>"	LOC="f13";	// f
+NET "o_disp_seg<1>"	LOC="n16";	// g
+NET "o_disp_seg<0>"	LOC="p16";	// dp
+
+
+NET "i_rxd"		LOC="t13";
+NET "o_txd"		LOC="r13";
+
+
+NET "o_ld<7>"		LOC="p11";
+NET "o_ld<6>"		LOC="p12";
+NET "o_ld<5>"		LOC="n12";
+NET "o_ld<4>"		LOC="p13";
+NET "o_ld<3>"		LOC="n14";
+NET "o_ld<2>"		LOC="l12";
+NET "o_ld<1>"		LOC="p14";
+NET "o_ld<0>"		LOC="k12";
+

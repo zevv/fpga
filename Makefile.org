@@ -1,0 +1,97 @@
+
+# PROJECT = vga
+# TOP = vga
+# SOURCES = vga.v 
+
+# ARCH = spartan3
+# PART = xc3s200-ft256-4
+
+all:
+	@echo "The toplevel makefile does not define any targets"
+
+############################################################################
+# Simulation using cver
+############################################################################
+
+CVERFLAGS  = /windows/Xilinx/verilog/src/glbl.v
+CVERFLAGS += -y /home/ico/prjs/fpga/Unisims 
+CVERFLAGS += +libext+.v+ -q
+
+sim_%:	$(SOURCES) 
+	rm -f tb_${*}.vcd
+	cver tb_$*.v $(SOURCES) $(CVERFLAGS)
+	gtkwave tb_$*.vcd tb_$*.save
+
+
+############################################################################
+# Xilinx tools and wine
+############################################################################
+
+XDIR = /windows/Xilinx
+
+XBIN = $(XDIR)/bin/nt
+XENV = z:$(XDIR)
+
+WINEENV	 = XILINX=$(XENV) WINEDEBUG=-all
+WINE 	 = $(WINEENV) wine
+
+XST 	 = $(WINE) $(XBIN)/xst
+NGDBUILD = $(WINE) $(XBIN)/ngdbuild
+MAP      = $(WINE) $(XBIN)/map
+PAR      = $(WINE) $(XBIN)/par
+BITGEN   = $(WINE) $(XBIN)/bitgen
+PROMGEN  = $(WINE) $(XBIN)/promgen
+
+XSTWORK   = $(PROJECT).work
+XSTSCRIPT = $(PROJECT).xstscript
+
+.PRECIOUS: %.ngc %.ngc %.ngd %.map.ncd %.bit %.par.ncd
+
+	
+$(XSTWORK): $(SOURCES)
+	> $@
+	for a in $(SOURCES); do echo "verilog work $$a" >> $@; done
+
+$(XSTSCRIPT): $(XSTWORK)
+	> $@
+	echo -n "run -ifn $(XSTWORK) -ifmt mixed -top $(TOP) -ofn $(PROJECT).ngc" >> $@
+	echo " -ofmt NGC -p $(PART) -opt_mode Speed -opt_level 1" >> $@
+
+%.ngc: $(XSTSCRIPT)
+	$(XST) -ifn $<
+	
+%.ngd: %.ngc %.ucf
+	$(NGDBUILD) -intstyle ise -dd _ngo -uc $(PROJECT).ucf -p $(PART) $*.ngc $*.ngd
+	
+%.map.ncd: %.ngd
+	$(MAP) -o $@ $< $*.pcf
+
+%.par.ncd: %.map.ncd
+	$(PAR) -w -ol 2 $< $@ $*.pcf
+
+%.bit: %.par.ncd
+	$(BITGEN) -w -g UnusedPin:PullNone $< $@ $*.pcf
+
+%.prm: %.bit
+	$(PROMGEN) -o $@ -w -u 0  $<
+
+install: $(PROJECT).bit
+	ljp $< /dev/parport0
+
+
+############################################################################
+
+	
+clean:
+	rm -f $(XSTWORK) $(XSTSCRIPT)
+	rm -f *.ngc *.ngd *.bld *.srp *.lso *.prj 
+	rm -f *.map.mrp *.map.ncd *.map.ngm *.mcs *.par.ncd *.par.pad
+	rm -f *.pcf *.prm *.bgn *.drc
+	rm -f *.par_pad.csv *.par_pad.txt *.par.par *.par.xpi
+	rm -f *.bit
+	rm -f *.vcd *.vvp
+	rm -rf _ngo/
+	rm -rf xst/
+
+# end
+	

@@ -1,0 +1,35 @@
+#!/usr/bin/perl
+
+$o = shift;
+
+$color{info} = "\e[1m";
+$color{error} = "\e[1;31m";
+$color{warning} = "\e[1;33m";
+$color{normal} = "\e[0m";
+
+while(<>) {
+	$l = $_;
+
+	$state = "normal";
+	$state = "info"    if($l =~ /INFO:/);
+	$state = "error"   if($l =~ /ERROR:/);
+	$state = "warning" if($l =~ /WARNING:/);
+	
+	$l =  $color{$state} . "$l" . $color{$normal};
+	
+	print $l;
+	$$state .= $l;
+}
+
+if($o) {
+	print "--------- info -------------\n";
+	print $info;
+	print "\e[0m";
+	print "--------- warn -------------\n";
+	print $warning;
+	print "\e[0m";
+	print "--------- err --------------\n";
+	print $error;
+	print "\e[0m";
+}
+

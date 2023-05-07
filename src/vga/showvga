@@ -1,0 +1,41 @@
+#!/usr/bin/perl 
+
+require "../bin/vcd.pm";
+use G2;
+use Data::Dumper;
+
+$v = new vcd("vga.vcd");
+
+$w = 300;
+$h = 300;
+
+$g2c = newX11 G2::Device($w, $h);
+$g2c->set_auto_flush(0);
+
+
+while($v->step) {
+
+	if($v->posedge('o_hsync')) {
+		$x = 0;
+		$y ++;
+		$g2c->flush();
+	}
+	
+	if($v->posedge('o_vsync')) {
+		$g2c->flush();
+		$y += 10;
+	}
+	
+	if($v->posedge('i_clk')) {
+		$x++;
+	}
+
+	$g2c->pen(1);
+	if($v->value('o_red')) { $g2c->pen(0); }
+
+	$g2c->plot($x+10, ($h-$y)-10);
+
+}
+
+$g2c->flush();
+

@@ -1,0 +1,9 @@
+*-20.384283 436900 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+@28
+main_test.main.i_clk
+main_test.main.i_rxd
+main_test.main.uart_data_valid
+@22
+main_test.main.uart_data[7:0]
+@28
+main_test.main.o_txd

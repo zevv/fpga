@@ -1,0 +1,154 @@
+
+//////////////////////////////////////////////////////////////////////
+// SRAM (p.11)
+//////////////////////////////////////////////////////////////////////
+
+NET "o_sram_a<17>"	LOC="l3";
+NET "o_sram_a<16>"	LOC="k5";
+NET "o_sram_a<15>"	LOC="k3";
+NET "o_sram_a<14>"	LOC="j3";
+NET "o_sram_a<13>"	LOC="j4";
+NET "o_sram_a<12>"	LOC="h4";
+NET "o_sram_a<11>"	LOC="h3";
+NET "o_sram_a<10>"	LOC="g5";
+NET "o_sram_a<9>"	LOC="e4";
+NET "o_sram_a<8>"	LOC="e3";
+NET "o_sram_a<7>"	LOC="f4";
+NET "o_sram_a<6>"	LOC="f3";
+NET "o_sram_a<5>"	LOC="g4";
+NET "o_sram_a<4>"	LOC="l4";
+NET "o_sram_a<3>"	LOC="m3";
+NET "o_sram_a<2>"	LOC="m4";
+NET "o_sram_a<1>"	LOC="n3";
+NET "o_sram_a<0>"	LOC="l5";
+NET "o_sram_oe"		LOC="k4";
+NET "o_sram_we"		LOC="g3";
+
+// SRAM chip 1
+
+NET "io_sram1_d<15>"	LOC="r1";
+NET "io_sram1_d<14>"	LOC="p1";
+NET "io_sram1_d<13>"	LOC="l2";
+NET "io_sram1_d<12>"	LOC="j2";
+NET "io_sram1_d<11>"	LOC="h1";
+NET "io_sram1_d<10>"	LOC="f2";
+NET "io_sram1_d<9>"	LOC="p8";
+NET "io_sram1_d<8>"	LOC="d3";
+NET "io_sram1_d<7>"	LOC="b1";
+NET "io_sram1_d<6>"	LOC="c1";
+NET "io_sram1_d<5>"	LOC="c2";
+NET "io_sram1_d<4>"	LOC="r5";
+NET "io_sram1_d<3>"	LOC="t5";
+NET "io_sram1_d<2>"	LOC="r6";
+NET "io_sram1_d<1>"	LOC="t8";
+NET "io_sram1_d<0>"	LOC="n7";
+NET "o_sram1_ce"	LOC="p7";
+NET "o_sram1_ub"	LOC="t4";
+NET "o_sram1_lb"	LOC="p6";
+
+// SRAM chip 2
+
+NET "io_sram1_d<15>"	LOC="n1";
+NET "io_sram1_d<14>"	LOC="m1";
+NET "io_sram1_d<13>"	LOC="k2";
+NET "io_sram1_d<12>"	LOC="c3";
+NET "io_sram1_d<11>"	LOC="f5";
+NET "io_sram1_d<10>"	LOC="g1";
+NET "io_sram1_d<9>"	LOC="e2";
+NET "io_sram1_d<8>"	LOC="d2";
+NET "io_sram1_d<7>"	LOC="d1";
+NET "io_sram1_d<6>"	LOC="e1";
+NET "io_sram1_d<5>"	LOC="g2";
+NET "io_sram1_d<4>"	LOC="j1";
+NET "io_sram1_d<3>"	LOC="k1";
+NET "io_sram1_d<2>"	LOC="m2";
+NET "io_sram1_d<1>"	LOC="n2";
+NET "io_sram1_d<0>"	LOC="p2";
+NET "o_sram1_ce"	LOC="n5";
+NET "o_sram1_ub"	LOC="r4";
+NET "o_sram1_lb"	LOC="p5";
+
+//////////////////////////////////////////////////////////////////////
+// 7-seg display (p.15)
+//////////////////////////////////////////////////////////////////////
+
+NET "o_disp_an<3>"	LOC="e13";
+NET "o_disp_an<2>"	LOC="f14";
+NET "o_disp_an<1>"	LOC="g14";
+NET "o_disp_an<0>"	LOC="d14";
+
+NET "o_disp_seg<7>"	LOC="e14";	// a
+NET "o_disp_seg<6>"	LOC="g13";	// b
+NET "o_disp_seg<5>"	LOC="n15";	// c
+NET "o_disp_seg<4>"	LOC="p15";	// d
+NET "o_disp_seg<3>"	LOC="r16";	// e
+NET "o_disp_seg<2>"	LOC="f13";	// f
+NET "o_disp_seg<1>"	LOC="n16";	// g
+NET "o_disp_seg<0>"	LOC="p16";	// dp
+
+
+//////////////////////////////////////////////////////////////////////
+// Slide switches (p.19)
+//////////////////////////////////////////////////////////////////////
+
+NET "i_sw<7>"  		LOC="k13";
+NET "i_sw<6>"  		LOC="k14";
+NET "i_sw<5>"  		LOC="j13";
+NET "i_sw<4>"  		LOC="j14";
+NET "i_sw<3>"  		LOC="h13";
+NET "i_sw<2>"  		LOC="h14";
+NET "i_sw<1>"  		LOC="g12";
+NET "i_sw<0>"  		LOC="f12";
+
+//////////////////////////////////////////////////////////////////////
+// Push buttons (p.19)
+//////////////////////////////////////////////////////////////////////
+
+NET "i_btn<3>" 	 	LOC="l14";
+NET "i_btn<2>"		LOC="l13";
+NET "i_btn<1>"		LOC="m14";
+NET "i_btn<0>"		LOC="m13";
+
+//////////////////////////////////////////////////////////////////////
+// LEDs (p.20)
+//////////////////////////////////////////////////////////////////////
+
+NET "o_ld<7>"		LOC="p11";
+NET "o_ld<6>"		LOC="p12";
+NET "o_ld<5>"		LOC="n12";
+NET "o_ld<4>"		LOC="p13";
+NET "o_ld<3>"		LOC="n14";
+NET "o_ld<2>"		LOC="l12";
+NET "o_ld<1>"		LOC="p14";
+NET "o_ld<0>"		LOC="k12";
+
+//////////////////////////////////////////////////////////////////////
+// VGA (p.21-25)
+//////////////////////////////////////////////////////////////////////
+
+NET "o_vga_r"		LOC="r12";
+NET "o_vga_g"		LOC="t12";
+NET "o_vga_b"		LOC="r11";
+NET "o_vga_hsync"	LOC="r9";
+NET "o_vga_vsync"	LOC="t10";
+
+//////////////////////////////////////////////////////////////////////
+// PS2 (p.27-31)
+//////////////////////////////////////////////////////////////////////
+
+NET "io_ps2_data"	LOC="m15";
+NET "io_ps2_clk"	LOC="m16";
+
+//////////////////////////////////////////////////////////////////////
+// RS-232 (p.33-34)
+//////////////////////////////////////////////////////////////////////
+
+NET "i_rxd"		LOC="t13";
+NET "o_txd"		LOC="r13";
+
+//////////////////////////////////////////////////////////////////////
+// Clock (p.35)
+//////////////////////////////////////////////////////////////////////
+
+NET "i_clk"		LOC="t9";
+

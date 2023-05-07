@@ -1,0 +1,7 @@
+
+bin2init*	Convert binary file to INIT's for blockram
+bin2memb*	Convert binary file to format readable by $readmemb
+colorize*	Apply ANSI-colors to make output
+templates*	Language templates browser
+vcd.pm		Perl module for VCD file parsing
+

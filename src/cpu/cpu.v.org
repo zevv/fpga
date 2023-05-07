@@ -1,0 +1,116 @@
+
+
+module cpu(clk, rst, addr, di, do, we);
+
+	input clk;
+	input rst;
+	output [15:0] addr;
+	input [15:0] di;
+	output [15:0] do;
+	output we;
+
+	wire clk;
+	wire rst;
+	reg [15:0] addr = 0;
+	wire [15:0] di;
+	reg [15:0] do = 0;
+	reg we = 0;
+	
+	reg [15:0] r0 = 16'h0000;
+	reg [15:0] r1 = 16'h0010;
+	reg [15:0] r2 = 16'h0020;
+	reg [15:0] r3 = 16'h0030;
+	reg [15:0] pc = 16'h0000;
+	reg [15:0] sp = 16'h0000;
+	wire [15:0] ir;
+	
+	wire [3:0] instr;
+	wire       imm;
+	wire [2:0] regnum_a;
+	wire [2:0] regnum_b;
+	wire [7:0] immdata;
+	
+	reg [15:0] alu_a;
+	reg [15:0] alu_b;
+	reg [15:0] alu_out;
+	reg        carry;
+	
+	reg [15:0] val_a;
+
+	
+	always @(pc)
+		addr <= pc;
+		
+		
+	assign ir = di;
+	
+	assign instr     = ir[15:12];
+	assign imm       = ir[11];
+	assign regnum_a  = ir[10:8];
+	assign regnum_b  = ir[7:5];
+	assign immdata   = ir[7:0];
+
+	/* register a and b selectors */
+	
+	always @(regnum_a, imm, immdata, r0, r1, r2, r3, pc, sp)
+		if(imm)
+			alu_a <= immdata;
+		else
+		case (regnum_a)
+			3'h0: alu_a <= r0;
+			3'h1: alu_a <= r1;
+			3'h2: alu_a <= r2;
+			3'h3: alu_a <= r3;
+			3'h4: alu_a <= pc;
+			3'h5: alu_a <= sp;
+			default: alu_a <= 0;
+		endcase
+
+
+	always @(regnum_b, imm, r0, r1, r2, r3, pc, sp)
+		if(imm)
+			alu_b <= 0;
+		else 
+		case (regnum_b)
+			3'h0: alu_b <= r0;
+			3'h1: alu_b <= r1;
+			3'h2: alu_b <= r2;
+			3'h3: alu_b <= r3;
+			3'h4: alu_b <= pc;
+			3'h5: alu_b <= sp;
+			default: alu_b <= 0;
+		endcase
+
+
+	/* ALU */
+	
+	always @(instr, alu_a, alu_b) 
+		case(instr)
+			4'h0: alu_out <= alu_a;
+			4'h1: {carry, alu_out} <= alu_a + alu_b;
+			default: alu_out <= 0;
+		endcase
+
+
+	always @(negedge clk)
+		case(regnum_a)
+			3'h0: r0 <= alu_out;
+			3'h1: r1 <= alu_out;
+			3'h2: r2 <= alu_out;
+			3'h3: r3 <= alu_out;
+			3'h5: sp <= alu_out;
+		endcase
+
+	always @(negedge clk)
+		if(rst)
+			pc <= 0;
+		else 
+			if(regnum_a == 3'h4)
+				pc <= alu_out;
+			else
+				pc <= pc + 1;
+			
+endmodule
+	
+	
+	

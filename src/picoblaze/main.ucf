@@ -1,0 +1,13 @@
+
+NET "clk"		LOC="t9";
+NET "reset"  		LOC = "l14";
+
+NET "out_port<7>"		LOC="p11";
+NET "out_port<6>"		LOC="p12";
+NET "out_port<5>"		LOC="n12";
+NET "out_port<4>"		LOC="p13";
+NET "out_port<3>"		LOC="n14";
+NET "out_port<2>"		LOC="l12";
+NET "out_port<1>"		LOC="p14";
+NET "out_port<0>"		LOC="k12";
+

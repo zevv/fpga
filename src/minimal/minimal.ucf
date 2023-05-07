@@ -1,0 +1,11 @@
+
+
+NET "i_reset"		LOC = "l14";
+NET "i_clk" 		LOC = "t9";
+NET "i_button" 		LOC = "m13";
+
+NET "o_led1"  		LOC = "k12";
+
+NET "o_hsync"		LOC = "r9";
+NET "o_vsync"		LOC = "t10";
+NET "o_blue"		LOC = "r11";

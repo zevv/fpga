@@ -1,0 +1,7 @@
+*-16.000000 12489000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+@28
+sim_main.main.i_clk
+sim_main.main.o_vclk
+sim_main.main.o_vsync
+sim_main.main.o_hsync
+sim_main.main.o_vid

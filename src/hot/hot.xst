@@ -1,0 +1,1 @@
+run -ifn hot.work -ifmt mixed -top hot -ofn hot.ngc -ofmt NGC -p xc3s200-ft256-4 -opt_mode Speed -opt_level 1

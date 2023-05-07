@@ -1,0 +1,370 @@
+Release 6.3i - xst G.38
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> 
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+     7.1) Device utilization summary
+     7.2) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : life.work
+Input Format                       : mixed
+
+---- Target Parameters
+Output File Name                   : life.ngc
+Output Format                      : NGC
+Target Device                      : xc3s200-ft256-4
+
+---- Source Options
+Top Module Name                    : life
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling source file "life.v"
+Module <life> compiled
+No errors in compilation
+Analysis of file <life.work> succeeded.
+ 
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <life>.
+Module <life> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <life>.
+    Related source file is life.v.
+WARNING:Xst:647 - Input <rst> is never used.
+    Found 1-bit 64-to-1 multiplexer for signal <$COND_1>.
+    Found 2-bit adder for signal <$n0000> created at line 204.
+    Found 2-bit adder for signal <$n0001> created at line 201.
+    Found 2-bit adder for signal <$n0002> created at line 198.
+    Found 2-bit adder for signal <$n0003> created at line 195.
+    Found 2-bit adder for signal <$n0004> created at line 192.
+    Found 2-bit adder for signal <$n0005> created at line 189.
+    Found 2-bit adder for signal <$n0006> created at line 186.
+    Found 2-bit adder for signal <$n0007> created at line 183.
+    Found 2-bit adder for signal <$n0008> created at line 180.
+    Found 2-bit adder for signal <$n0009> created at line 177.
+    Found 2-bit adder for signal <$n0010> created at line 174.
+    Found 2-bit adder for signal <$n0011> created at line 171.
+    Found 2-bit adder for signal <$n0012> created at line 168.
+    Found 2-bit adder for signal <$n0013> created at line 165.
+    Found 2-bit adder for signal <$n0014> created at line 162.
+    Found 2-bit adder for signal <$n0015> created at line 159.
+    Found 2-bit adder for signal <$n0016> created at line 156.
+    Found 2-bit adder for signal <$n0017> created at line 153.
+    Found 2-bit adder for signal <$n0018> created at line 150.
+    Found 2-bit adder for signal <$n0019> created at line 147.
+    Found 2-bit adder for signal <$n0020> created at line 144.
+    Found 2-bit adder for signal <$n0021> created at line 141.
+    Found 2-bit adder for signal <$n0022> created at line 138.
+    Found 2-bit adder for signal <$n0023> created at line 135.
+    Found 2-bit adder for signal <$n0024> created at line 132.
+    Found 2-bit adder for signal <$n0025> created at line 129.
+    Found 2-bit adder for signal <$n0026> created at line 126.
+    Found 2-bit adder for signal <$n0027> created at line 123.
+    Found 2-bit adder for signal <$n0028> created at line 120.
+    Found 2-bit adder for signal <$n0029> created at line 117.
+    Found 2-bit adder for signal <$n0030> created at line 114.
+    Found 2-bit adder for signal <$n0031> created at line 111.
+    Found 2-bit adder for signal <$n0032> created at line 108.
+    Found 2-bit adder for signal <$n0033> created at line 105.
+    Found 2-bit adder for signal <$n0034> created at line 102.
+    Found 2-bit adder for signal <$n0035> created at line 99.
+    Found 2-bit adder for signal <$n0036> created at line 96.
+    Found 2-bit adder for signal <$n0037> created at line 93.
+    Found 2-bit adder for signal <$n0038> created at line 90.
+    Found 2-bit adder for signal <$n0039> created at line 87.
+    Found 2-bit adder for signal <$n0040> created at line 84.
+    Found 2-bit adder for signal <$n0041> created at line 81.
+    Found 2-bit adder for signal <$n0042> created at line 78.
+    Found 2-bit adder for signal <$n0043> created at line 75.
+    Found 2-bit adder for signal <$n0044> created at line 72.
+    Found 2-bit adder for signal <$n0045> created at line 69.
+    Found 2-bit adder for signal <$n0046> created at line 66.
+    Found 2-bit adder for signal <$n0047> created at line 63.
+    Found 2-bit adder for signal <$n0048> created at line 60.
+    Found 2-bit adder for signal <$n0049> created at line 57.
+    Found 2-bit adder for signal <$n0050> created at line 54.
+    Found 2-bit adder for signal <$n0051> created at line 51.
+    Found 2-bit adder for signal <$n0052> created at line 48.
+    Found 2-bit adder for signal <$n0053> created at line 45.
+    Found 2-bit adder for signal <$n0054> created at line 42.
+    Found 2-bit adder for signal <$n0055> created at line 39.
+    Found 2-bit adder for signal <$n0056> created at line 36.
+    Found 2-bit adder for signal <$n0057> created at line 33.
+    Found 2-bit adder for signal <$n0058> created at line 30.
+    Found 2-bit adder for signal <$n0059> created at line 27.
+    Found 2-bit adder for signal <$n0060> created at line 24.
+    Found 2-bit adder for signal <$n0061> created at line 21.
+    Found 2-bit adder for signal <$n0062> created at line 18.
+    Found 2-bit adder for signal <$n0063> created at line 15.
+    Found 3-bit adder carry out for signal <$n0384>.
+    Found 3-bit adder carry out for signal <$n0385>.
+    Found 3-bit adder carry out for signal <$n0386>.
+    Found 3-bit adder carry out for signal <$n0387>.
+    Found 3-bit adder carry out for signal <$n0388>.
+    Found 3-bit adder carry out for signal <$n0389>.
+    Found 3-bit adder carry out for signal <$n0390>.
+    Found 3-bit adder carry out for signal <$n0391>.
+    Found 3-bit adder carry out for signal <$n0392>.
+    Found 3-bit adder carry out for signal <$n0393>.
+    Found 3-bit adder carry out for signal <$n0394>.
+    Found 3-bit adder carry out for signal <$n0395>.
+    Found 3-bit adder carry out for signal <$n0396>.
+    Found 3-bit adder carry out for signal <$n0397>.
+    Found 3-bit adder carry out for signal <$n0398>.
+    Found 3-bit adder carry out for signal <$n0399>.
+    Found 3-bit adder carry out for signal <$n0400>.
+    Found 3-bit adder carry out for signal <$n0401>.
+    Found 3-bit adder carry out for signal <$n0402>.
+    Found 3-bit adder carry out for signal <$n0403>.
+    Found 3-bit adder carry out for signal <$n0404>.
+    Found 3-bit adder carry out for signal <$n0405>.
+    Found 3-bit adder carry out for signal <$n0406>.
+    Found 3-bit adder carry out for signal <$n0407>.
+    Found 3-bit adder carry out for signal <$n0408>.
+    Found 3-bit adder carry out for signal <$n0409>.
+    Found 3-bit adder carry out for signal <$n0410>.
+    Found 3-bit adder carry out for signal <$n0411>.
+    Found 3-bit adder carry out for signal <$n0412>.
+    Found 3-bit adder carry out for signal <$n0413>.
+    Found 3-bit adder carry out for signal <$n0414>.
+    Found 3-bit adder carry out for signal <$n0415>.
+    Found 3-bit adder carry out for signal <$n0416>.
+    Found 3-bit adder carry out for signal <$n0417>.
+    Found 3-bit adder carry out for signal <$n0418>.
+    Found 3-bit adder carry out for signal <$n0419>.
+    Found 3-bit adder carry out for signal <$n0420>.
+    Found 3-bit adder carry out for signal <$n0421>.
+    Found 3-bit adder carry out for signal <$n0422>.
+    Found 3-bit adder carry out for signal <$n0423>.
+    Found 3-bit adder carry out for signal <$n0424>.
+    Found 3-bit adder carry out for signal <$n0425>.
+    Found 3-bit adder carry out for signal <$n0426>.
+    Found 3-bit adder carry out for signal <$n0427>.
+    Found 3-bit adder carry out for signal <$n0428>.
+    Found 3-bit adder carry out for signal <$n0429>.
+    Found 3-bit adder carry out for signal <$n0430>.
+    Found 3-bit adder carry out for signal <$n0431>.
+    Found 3-bit adder carry out for signal <$n0432>.
+    Found 3-bit adder carry out for signal <$n0433>.
+    Found 3-bit adder carry out for signal <$n0434>.
+    Found 3-bit adder carry out for signal <$n0435>.
+    Found 3-bit adder carry out for signal <$n0436>.
+    Found 3-bit adder carry out for signal <$n0437>.
+    Found 3-bit adder carry out for signal <$n0438>.
+    Found 3-bit adder carry out for signal <$n0439>.
+    Found 3-bit adder carry out for signal <$n0440>.
+    Found 3-bit adder carry out for signal <$n0441>.
+    Found 3-bit adder carry out for signal <$n0442>.
+    Found 3-bit adder carry out for signal <$n0443>.
+    Found 3-bit adder carry out for signal <$n0444>.
+    Found 3-bit adder carry out for signal <$n0445>.
+    Found 3-bit adder carry out for signal <$n0446>.
+    Found 3-bit adder carry out for signal <$n0447>.
+    Found 1-bit adder carry out for signal <$n0448>.
+    Found 1-bit adder carry out for signal <$n0449>.
+    Found 1-bit adder carry out for signal <$n0450>.
+    Found 1-bit adder carry out for signal <$n0451>.
+    Found 1-bit adder carry out for signal <$n0452>.
+    Found 1-bit adder carry out for signal <$n0453>.
+    Found 1-bit adder carry out for signal <$n0454>.
+    Found 1-bit adder carry out for signal <$n0455>.
+    Found 1-bit adder carry out for signal <$n0456>.
+    Found 1-bit adder carry out for signal <$n0457>.
+    Found 1-bit adder carry out for signal <$n0458>.
+    Found 1-bit adder carry out for signal <$n0459>.
+    Found 1-bit adder carry out for signal <$n0460>.
+    Found 1-bit adder carry out for signal <$n0461>.
+    Found 1-bit adder carry out for signal <$n0462>.
+    Found 1-bit adder carry out for signal <$n0463>.
+    Found 1-bit adder carry out for signal <$n0464>.
+    Found 1-bit adder carry out for signal <$n0465>.
+    Found 1-bit adder carry out for signal <$n0466>.
+    Found 1-bit adder carry out for signal <$n0467>.
+    Found 1-bit adder carry out for signal <$n0468>.
+    Found 1-bit adder carry out for signal <$n0469>.
+    Found 1-bit adder carry out for signal <$n0470>.
+    Found 1-bit adder carry out for signal <$n0471>.
+    Found 1-bit adder carry out for signal <$n0472>.
+    Found 1-bit adder carry out for signal <$n0473>.
+    Found 1-bit adder carry out for signal <$n0474>.
+    Found 1-bit adder carry out for signal <$n0475>.
+    Found 1-bit adder carry out for signal <$n0476>.
+    Found 1-bit adder carry out for signal <$n0477>.
+    Found 1-bit adder carry out for signal <$n0478>.
+    Found 1-bit adder carry out for signal <$n0479>.
+    Found 1-bit adder carry out for signal <$n0480>.
+    Found 1-bit adder carry out for signal <$n0481>.
+    Found 1-bit adder carry out for signal <$n0482>.
+    Found 1-bit adder carry out for signal <$n0483>.
+    Found 1-bit adder carry out for signal <$n0484>.
+    Found 1-bit adder carry out for signal <$n0485>.
+    Found 1-bit adder carry out for signal <$n0486>.
+    Found 1-bit adder carry out for signal <$n0487>.
+    Found 1-bit adder carry out for signal <$n0488>.
+    Found 1-bit adder carry out for signal <$n0489>.
+    Found 1-bit adder carry out for signal <$n0490>.
+    Found 1-bit adder carry out for signal <$n0491>.
+    Found 1-bit adder carry out for signal <$n0492>.
+    Found 1-bit adder carry out for signal <$n0493>.
+    Found 1-bit adder carry out for signal <$n0494>.
+    Found 1-bit adder carry out for signal <$n0495>.
+    Found 1-bit adder carry out for signal <$n0496>.
+    Found 1-bit adder carry out for signal <$n0497>.
+    Found 1-bit adder carry out for signal <$n0498>.
+    Found 1-bit adder carry out for signal <$n0499>.
+    Found 1-bit adder carry out for signal <$n0500>.
+    Found 1-bit adder carry out for signal <$n0501>.
+    Found 1-bit adder carry out for signal <$n0502>.
+    Found 1-bit adder carry out for signal <$n0503>.
+    Found 1-bit adder carry out for signal <$n0504>.
+    Found 1-bit adder carry out for signal <$n0505>.
+    Found 1-bit adder carry out for signal <$n0506>.
+    Found 1-bit adder carry out for signal <$n0507>.
+    Found 1-bit adder carry out for signal <$n0508>.
+    Found 1-bit adder carry out for signal <$n0509>.
+    Found 1-bit adder carry out for signal <$n0510>.
+    Found 1-bit adder carry out for signal <$n0511>.
+    Found 64-bit register for signal <cel>.
+    Found 4-bit adder for signal <count0>.
+    Found 4-bit adder for signal <count1>.
+    Found 4-bit adder for signal <count10>.
+    Found 4-bit adder for signal <count11>.
+    Found 4-bit adder for signal <count12>.
+    Found 4-bit adder for signal <count13>.
+    Found 4-bit adder for signal <count14>.
+    Found 4-bit adder for signal <count15>.
+    Found 4-bit adder for signal <count16>.
+    Found 4-bit adder for signal <count17>.
+    Found 4-bit adder for signal <count18>.
+    Found 4-bit adder for signal <count19>.
+    Found 4-bit adder for signal <count2>.
+    Found 4-bit adder for signal <count20>.
+    Found 4-bit adder for signal <count21>.
+    Found 4-bit adder for signal <count22>.
+    Found 4-bit adder for signal <count23>.
+    Found 4-bit adder for signal <count24>.
+    Found 4-bit adder for signal <count25>.
+    Found 4-bit adder for signal <count26>.
+    Found 4-bit adder for signal <count27>.
+    Found 4-bit adder for signal <count28>.
+    Found 4-bit adder for signal <count29>.
+    Found 4-bit adder for signal <count3>.
+    Found 4-bit adder for signal <count30>.
+    Found 4-bit adder for signal <count31>.
+    Found 4-bit adder for signal <count32>.
+    Found 4-bit adder for signal <count33>.
+    Found 4-bit adder for signal <count34>.
+    Found 4-bit adder for signal <count35>.
+    Found 4-bit adder for signal <count36>.
+    Found 4-bit adder for signal <count37>.
+    Found 4-bit adder for signal <count38>.
+    Found 4-bit adder for signal <count39>.
+    Found 4-bit adder for signal <count4>.
+    Found 4-bit adder for signal <count40>.
+    Found 4-bit adder for signal <count41>.
+    Found 4-bit adder for signal <count42>.
+    Found 4-bit adder for signal <count43>.
+    Found 4-bit adder for signal <count44>.
+    Found 4-bit adder for signal <count45>.
+    Found 4-bit adder for signal <count46>.
+    Found 4-bit adder for signal <count47>.
+    Found 4-bit adder for signal <count48>.
+    Found 4-bit adder for signal <count49>.
+    Found 4-bit adder for signal <count5>.
+    Found 4-bit adder for signal <count50>.
+    Found 4-bit adder for signal <count51>.
+    Found 4-bit adder for signal <count52>.
+    Found 4-bit adder for signal <count53>.
+    Found 4-bit adder for signal <count54>.
+    Found 4-bit adder for signal <count55>.
+    Found 4-bit adder for signal <count56>.
+    Found 4-bit adder for signal <count57>.
+    Found 4-bit adder for signal <count58>.
+    Found 4-bit adder for signal <count59>.
+    Found 4-bit adder for signal <count6>.
+    Found 4-bit adder for signal <count60>.
+    Found 4-bit adder for signal <count61>.
+    Found 4-bit adder for signal <count62>.
+    Found 4-bit adder for signal <count63>.
+    Found 4-bit adder for signal <count7>.
+    Found 4-bit adder for signal <count8>.
+    Found 4-bit adder for signal <count9>.
+    Found 16-bit up counter for signal <num>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  64 D-type flip-flop(s).
+	inferred 256 Adder/Subtracter(s).
+	inferred   1 Multiplexer(s).
+Unit <life> synthesized.
+
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors               : 256
+ 1-bit adder carry out             : 64
+ 3-bit adder carry out             : 64
+ 2-bit adder                       : 64
+ 4-bit adder                       : 64
+# Counters                         : 1
+ 16-bit up counter                 : 1
+# Registers                        : 64
+ 1-bit register                    : 64
+# Multiplexers                     : 1
+ 1-bit 64-to-1 multiplexer         : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1291 - FF/Latch <num_15> is unconnected in block <life>.
+WARNING:Xst:1291 - FF/Latch <num_6> is unconnected in block <life>.
+WARNING:Xst:1291 - FF/Latch <num_7> is unconnected in block <life>.
+WARNING:Xst:1291 - FF/Latch <num_8> is unconnected in block <life>.
+WARNING:Xst:1291 - FF/Latch <num_9> is unconnected in block <life>.
+WARNING:Xst:1291 - FF/Latch <num_10> is unconnected in block <life>.
+WARNING:Xst:1291 - FF/Latch <num_11> is unconnected in block <life>.
+WARNING:Xst:1291 - FF/Latch <num_12> is unconnected in block <life>.
+WARNING:Xst:1291 - FF/Latch <num_13> is unconnected in block <life>.
+WARNING:Xst:1291 - FF/Latch <num_14> is unconnected in block <life>.
+
+Optimizing unit <life> ...

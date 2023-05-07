@@ -1,0 +1,103 @@
+#!/usr/bin/perl
+
+
+$w = 8;
+$h = 8;
+
+
+for($i=0; $i<$w*$h; $i++) {
+	if(rand(100) < 30) {
+		$initval .= "1";
+	} else {
+		$initval .= "0";
+	} 
+}
+
+
+$i = 0;
+
+
+printf "module life(rst, clk, en_out, dout);\n";
+printf "	input rst;\n";
+printf "	input clk;\n";
+printf "	input en_out;\n";
+printf "	output dout;\n";
+printf "	reg [%d:0] cel = %d'b%s;\n", $w*$h-1, $w*$h, $initval;
+printf "\n";
+
+print <<EOT;
+
+	reg [15:0] num;
+	
+	always @(posedge clk) if(en_out) num=num+1; else num=0;
+	assign dout = cel[num];
+
+EOT
+
+for($y=0; $y<$h; $y++) {
+	for($x=0; $x<$w; $x++) {
+	
+		$name = sprintf "sum_%d_to_%d__%d", ($x+0)%$w,  ($x+2)%$w, $y;
+		printf "	wire [2:0] $name;\n";
+		printf "	assign $name = cel[%d] + cel[%d] + cel[%d];\n", n($x+0, $y), n($x+1, $y), n($x+2, $y);
+		printf "\n";
+	}
+}
+printf("	\n\n");
+
+
+for($y=0; $y<$h; $y++) {
+	for($x=0; $x<$w; $x++) {
+
+		printf "\n";
+		printf "	/* (%d,%d) = cell %d */\n", $x, $y, n($x,$y);
+		printf "\n";
+		printf "	wire [3:0] count%d;\n", $i;
+
+		printf "	assign count%d = sum_%d_to_%d__%d + sum_%d_to_%d__%d + sum_%d_to_%d__%d;\n",
+				$i,
+				($x-1)%$w, ($x+1)%$w, ($y-1)%$h,
+				($x-1)%$w, ($x+1)%$w, ($y+0)%$h,
+				($x-1)%$w, ($x+1)%$w, ($y+1)%$h;
+
+		printf "	always @(posedge clk) cel[%d] <= (count%d == 3) || (cel[%d] & (count%d == 4));\n",
+							$i,		$i,		$i,		$i;
+
+		$i++;
+	}
+}
+
+
+print "endmodule\n";
+
+sub n
+{
+	my($x, $y) = @_;
+	if($x<0) { $x+=$w };
+	if($x>=$w) { $x-=$w };
+	if($y<0) { $y+=$h };
+	if($y>=$h) { $y-=$h };
+	return $y * $w + $x;
+}
+
+__DATA__
+
+
+module life(clk, cel);
+
+	input clk;
+	output [255:0] cel;
+	
+	reg [255:0] cel;
+	
+	
+
+	wire [3:0] count1;
+	
+	assign count1 = cel[0] + cel[1] + cel[2] + cel[3] + cel[10] + cel[12] + cel[18] + cel[19] + cel[20];
+	
+	always @(posedge clk)
+		cel[1] <= (count1 == 3) || (cel[1] & (count1 == 2));
+	
+	
+endmodule
